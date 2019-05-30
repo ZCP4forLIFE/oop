@@ -9,38 +9,44 @@ class Book {
 		string name = "Unknown";
 		int pages = 0;
 		int year = 0;
-	
+
 		void zadaem(){
-			cout<<"Input name of author: ";
+			cout<<"Kto autor? ";
 			getline(cin, author);
-			cout<<"Input name of the book: ";
+			//cin.ignore();
+			cout<<"A kak nazovem? ";
 			getline(cin, name);
-			cout<<"Input number of pages: ";
+			//cin.ignore();
+			cout<<"Mnogo listat? ";
 			cin>>pages;
 			cin.ignore();
-			cout<<"Input year of publishing: ";
+			cout<<"Bayan? ";
 			cin>>year;
 			cin.ignore();
 			cout<<endl;
 		}
 		void display(){
-			cout<<"Your book is - "<<name<<"\nWritten by "<<author<<"\nNumber of pages - "<<pages<<"\nPublished in "<<year<<"\n";
+			cout<<"\nYour book is - "<<name<<"\nWritten by "<<author<<"\nNumber of pages - "<<pages<<"\nPublished in "<<year<<"\n";
 		}
 };
 
 int main(){
-	int b;
+	int n;
 	cout << "Skoka knig??";
 	cin >> n;
-	Book Library[n];
+	cin.ignore();
+	Book KEK[n];
 	int i;
 	cout<<"Vse nagladno i po polochkam:\n";
 	for (i = 0;i < n;i++){
-		Library[i].zadaem();
+		KEK[i].zadaem();
 	}
 	int j;
 	cout<<"Nomer knigi, na kotoruyu nado posmotretb: ";
 	cin>>j;
-	Library[j-1].display();
+	if (j > 0 && j <= n){
+        KEK[j-1].display();
+	}
+	else cout << "ne";
 	return 0;
 }
