@@ -1,34 +1,20 @@
 #include <iostream>
-#include <math.h>
+
+
 using namespace std;
+
 int main()
 {
-	float a, b, z, t;
-	cout << "Enter a ,b\n";
-	cin >> a;
-	cin >> b;
-	if (a < b)
-	{
-		z = pow(abs(pow(a, 2.0) - pow(b, 2.0)), 0.5);
-	}
-	if (a >= b)
-	{
-		z = 1 - 2 * cos(a)*sin(b);
-	}
-	if (z < b)
-	{
-		t = pow(z + pow(a, 2.0)*b, (1.0 / 3.0));
-	}
-	if (z == b)
-	{
-		t = 1 - log(z) + cos(pow(a, 2.0)*b);
-	}
-	if (z > b)
-	{
-		t = 1 / cos(z*a);
-	}
-	cout << "t=" << t;
-	cout << ",z=" << z;
-	system("pause");
-	return 0;
+    setlocale(LC_ALL,"Russian");
+    int a,b;
+    char c;
+    cout << "Драси, это куркулятор. Введите своё выражение, а я посчитаю " << endl;
+    cin >> a >> c >> b;
+    if (c == '+') cout << a << "+" << b << "=" << a+b;
+    else if (c == '-') cout << a << "-" << b << "=" << a-b;
+    else if (c == '*') cout << a << "*" << b << "=" << a*b;
+    else if (c == '/'&&b!=0) cout << a << "/" << b << "=" << a/b;
+    else cout << "Вы что-то делаете не так";
+
+    return 0;
 }
