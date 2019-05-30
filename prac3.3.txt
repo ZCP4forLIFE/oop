@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Book {
+	public:
+		string author = "Unknown";
+		string name = "Unknown";
+		int pages = 0;
+		int year = 0;
+	
+		void zadaem(){
+			cout<<"Input name of author: ";
+			getline(cin, author);
+			cout<<"Input name of the book: ";
+			getline(cin, name);
+			cout<<"Input number of pages: ";
+			cin>>pages;
+			cin.ignore();
+			cout<<"Input year of publishing: ";
+			cin>>year;
+			cin.ignore();
+			cout<<endl;
+		}
+		void display(){
+			cout<<"Your book is - "<<name<<"\nWritten by "<<author<<"\nNumber of pages - "<<pages<<"\nPublished in "<<year<<"\n";
+		}
+};
+
+int main(){
+	int b;
+	cout << "Skoka knig??";
+	cin >> n;
+	Book Library[n];
+	int i;
+	cout<<"Vse nagladno i po polochkam:\n";
+	for (i = 0;i < n;i++){
+		Library[i].zadaem();
+	}
+	int j;
+	cout<<"Nomer knigi, na kotoruyu nado posmotretb: ";
+	cin>>j;
+	Library[j-1].display();
+	return 0;
+}
