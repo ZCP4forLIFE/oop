@@ -1,0 +1,58 @@
+#include <iostream>
+
+using namespace std;
+
+void bubblesort(int *mass, int s){
+	int temp;
+	for (int i = 0; i < s - 1; i++) {
+		for (int j = 0; j < s - i - 1; j++) {
+			if (mass[j] > mass[j + 1]) {
+				temp = mass[j];
+				mass[j] = mass[j + 1];
+				mass[j + 1] = temp;
+			}
+		}
+	}
+}
+
+void bubblesort(double *mass, int s){
+	double temp;
+	for (int i = 0; i < s - 1; i++) {
+		for (int j = 0; j < s - i - 1; j++) {
+			if (mass[j] > mass[j + 1]) {
+				temp = mass[j];
+				mass[j] = mass[j + 1];
+				mass[j + 1] = temp;
+			}
+		}
+	}
+}
+
+int main(){
+	int s;
+	cout<<"Razmer massiva: ";
+	cin>>s;
+	cout<<"Davay znacheniya\n";
+	int *massint = new int[s];
+	int i;
+	for (i = 0; i < s; i++){
+		cout<<"Davay znachenie etogo elementa "<<i+1<<": ";
+		cin>>massint[i];
+	}
+	bubblesort(massint, s);
+	cout<<"Sorted massiv: \n";
+	for (i = 0; i < s; i++) cout<<"Element "<<i+1<<" = "<<massint[i]<<"\n";
+	double *massdouble = new double[s];
+	cout<<"Davay znacheniya\n";
+	for (i = 0; i < s; i++){
+		cout<<"Davay znachenie etogo elementa "<<i+1<<": ";
+		cin>>massdouble[i];
+	}
+	bubblesort(massdouble,s);
+	cout<<"Sorted massiv: \n";
+	for (i = 0; i < s; i++) cout<<"Element "<<i+1<<" = "<<massdouble[i]<<"\n";
+	delete [] massdouble;
+	delete [] massint;
+	cout<<"Ya molodec";
+	return 0;
+}
